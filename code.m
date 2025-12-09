@@ -2,7 +2,6 @@
 
 clear; close all; clc; s = tf('s');
 
-%% 1) Planta (mesma do trabalho)
 A = 18;
 G = 820 / ((s + A)*(s + 2*A));
 
@@ -33,7 +32,7 @@ step(T_lead); grid on;
 title('Resposta ao degrau – Controlador de Avanço');
 
 %% ==============================
-% 4) CONTROLADOR DE ATRASO (LAG)
+% 4) CONTROLADOR DE ATRASO
 % ==============================
 
 % Atraso melhora baixa frequência sem mexer na fase alta
@@ -59,7 +58,7 @@ title('Resposta ao degrau – Controlador de Atraso');
 % 5) COMPARAÇÃO FINAL (BODE + DEGRAD)
 % ==============================
 
-% Comparando Bode (magnitude)
+% Comparando Bode
 figure('Name','Comparação Bode – Planta vs Lead vs Lag');
 bodemag(G, G_lead, G_lag);
 legend('Planta','Lead','Lag','Location','Best');
